@@ -12,6 +12,7 @@ import { formatCurrency } from './utils';
 
 export async function fetchRevenue() {
   // Add noStore() here prevent the response from being cached.
+
   // This is equivalent to in fetch(..., {cache: 'no-store'}).
 
   try {
@@ -23,7 +24,7 @@ export async function fetchRevenue() {
 
     const data = await sql<Revenue>`SELECT * FROM revenue`;
 
-    // console.log('Data fetch complete after 3 seconds.');
+    console.log('Data fetch complete after 3 seconds.');
 
     return data.rows;
   } catch (error) {
